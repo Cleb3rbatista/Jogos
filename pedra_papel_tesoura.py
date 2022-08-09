@@ -15,3 +15,4 @@ def is_win(jogador,computer_oponente):
     if(jogador=='r' and computer_oponente=='t') or (jogador=='p' and computer_oponente=='r') or (jogador=='t' and computer_oponente=='p'):
         return True
 print (play())
+
