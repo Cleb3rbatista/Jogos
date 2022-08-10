@@ -7,22 +7,27 @@ def jogo_da_velha():
             exibir()
             linha= int(input("\nlinha: "))
             coluna= int(input("\ncoluna: "))
+            #trava de linha maior que 3 e menor que 1
             if not 1<= linha <=3:
                 print("Error, o numero deve ser entre 1 e 3")
                 continue
+            #trava de coluna maior que 3 e menor que 1
             if not 1<= coluna <=3:
                 print("Error, o numero deve ser entre 1 e 3")
                 continue
-        
+            #marcador do tabuleiro (sempre inicia com zero)
             if tabuleiro [linha-1][coluna-1] == 0:
+                #marcado do jogador 1 (sempre ira marcar 1)
                 if(jogada%2+1)==1:
                     tabuleiro[linha-1][coluna-1] = 1
+                #marcado do jogador 2 (sempre ira marcar -1)
                 else:
                     tabuleiro[linha-1][coluna-1] = -1
+            #trava para não marca em um lugar que ja esteja marcado
             else:
                 print("não esta vazio")
                 continue
-            
+            #função para conta em quantas vezes foi nescessario para ganhar o jogo
             if ganhou():
                 print("jogador", jogada%2+1,"ganhou após", jogada+1 ,"rodadas" )
 
