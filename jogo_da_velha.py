@@ -3,10 +3,10 @@ def jogo_da_velha():
     def jogo():  
         jogada = 0  
         while ganhou() == 0:
-            print("n\Jogador", jogada%2 + 1 )
+            print("\nJogador", jogada%2 + 1 )
             exibir()
-            linha= int(input("\nlinha:"))
-            coluna= int(input("\ncoluna:"))
+            linha= int(input("\nlinha: "))
+            coluna= int(input("\ncoluna: "))
         
             if tabuleiro [linha-1][coluna-1] == 0:
                 if(jogada%2+1)==1:
@@ -15,7 +15,7 @@ def jogo_da_velha():
                     tabuleiro[linha-1][coluna-1] = -1
             else:
                 print("não esta vazio")
-                jogada = -1
+                continue
             
             if ganhou():
                 print("jogador", jogada%2+1,"ganhou após", jogada+1 ,"rodadas" )
