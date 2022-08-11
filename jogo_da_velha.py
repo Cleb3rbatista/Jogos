@@ -1,3 +1,4 @@
+from http.client import CONTINUE
 import string
 
 tabuleiro = [[0 for i in range(3)]for j in range(3)]            
@@ -10,12 +11,19 @@ def jogo_da_velha():
             while True:
                 try:
                     linha= int(input("\nlinha: "))
-                    coluna= int(input("\ncoluna: "))
                 except ValueError:
                     print("erro, digite um numero inteiro")
                     continue
                 else:
-                    break    
+                    break   
+            while True: 
+                try:
+                    coluna= int(input("\ncoluna: "))
+                except ValueError:
+                     print("erro, digite um numero inteiro")
+                     continue
+                else: 
+                    break
             #trava de linha maior que 3 e menor que 1
             if not 1<= linha <=3:
                 print("Error, o numero deve ser entre 1 e 3")
