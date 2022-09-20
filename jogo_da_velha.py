@@ -1,3 +1,4 @@
+from ast import Break
 from http.client import CONTINUE
 import string
 
@@ -32,7 +33,6 @@ def jogo_da_velha():
             if not 1<= coluna <=3:
                 print("Error, o numero deve ser entre 1 e 3")
                 continue
-             
             #marcador do tabuleiro (sempre inicia com zero)
             if tabuleiro [linha-1][coluna-1] == 0:
                 #marcado do jogador 1 (sempre ira marcar 1)
@@ -68,7 +68,11 @@ def jogo_da_velha():
         diagonal2   = tabuleiro[0][2]+tabuleiro[1][1]+tabuleiro[2][0]
         if diagonal1==3 or diagonal1==-3 or diagonal2==3 or diagonal2==-3:  
             return 1
-    
+
+        if soma!= 0 and (soma!=3 or soma!=-3):
+            print("Deu velha!")
+            Break
+        
         return 0
 
     #exibindo o tabuleiro
