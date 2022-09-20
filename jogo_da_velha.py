@@ -51,6 +51,10 @@ def jogo_da_velha():
 
             jogada += 1
             
+            if jogada == 9:
+                print("DEU VELHA !")
+                menu()
+                
     def ganhou():
         
         #ganhando na horizontal
@@ -58,28 +62,20 @@ def jogo_da_velha():
             soma = tabuleiro[i][0]+tabuleiro[i][1]+tabuleiro[i][2]
             if soma==3 or soma==-3:
                 return 1
-            elif soma==2 or soma==-2:
-                print("Deu velha!")
-                menu()
         
         #ganhando na vertical
         for i in range(3):
             soma = tabuleiro[0][i]+tabuleiro[1][i]+tabuleiro[2][i]
             if soma==3 or soma==-3:
                 return 1
-            elif soma==2 or soma==-2:
-                print("Deu velha!")
-                menu()
                 
-        #ganhando nas verticais 
+        #ganhando nas diagonais 
         diagonal1 = tabuleiro[0][0]+tabuleiro[1][1]+tabuleiro[2][2]
         diagonal2   = tabuleiro[0][2]+tabuleiro[1][1]+tabuleiro[2][0]
         if diagonal1==3 or diagonal1==-3 or diagonal2==3 or diagonal2==-3:  
             return 1
-        elif diagonal1==2 or diagonal1==-2 or diagonal2==2 or diagonal2==-2:
-            print("deu velha!")
-            menu()
-            return 0
+    
+        return 0
 
     #exibindo o tabuleiro
     def exibir():
