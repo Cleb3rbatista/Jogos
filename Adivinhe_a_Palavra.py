@@ -1,4 +1,5 @@
 import random
+import os
 def jogo_acerta_palavra():
     mylist = ["amarelo", "banana", "piso", "precioso", "hunched" , "dado", \
                 "Rabino", "agudo", "antro", "anunciar", "bebida", "enfermeira",\
@@ -34,6 +35,7 @@ def jogo_acerta_palavra():
                         palavra_formada += "*"   
                 print(palavra_formada)
                 if palavra_formada == palavra_secreta:
+                    os.system('cls')
                     print("PARABENS!!, VOCE GANHOU" 
                         " voce ganhou em " , contador_tentativas , "tentativas",
                         "a palavra certa e ", palavra_formada)
